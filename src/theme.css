@@ -1,0 +1,374 @@
+/* theme.css - Estilo John Nash */
+:root {
+  /* Cores "John Nash" - Caseiro, Natureza */
+  --color-primary: #8FBC8F; /* Verde Suave (Natureza) */
+  --color-primary-dark: #70a070;
+  --color-secondary: #D2B48C; /* Marrom Claro (Madeira) */
+  --color-accent: #ADD8E6; /* Azul Céu Claro */
+  --color-background: #F5F5F5; /* Bege (Fundo Principal) */
+  --color-surface: #FFFDD0; /* Creme (Cards, Superfícies) */
+  --color-text-primary: #36454F; /* Carvão Suave */
+  --color-text-secondary: #5C5C5C;
+  --color-error: #D32F2F;
+  --color-success: #388E3C;
+  --color-white: #FFFFFF;
+  --color-border: #E0E0E0;
+
+  /* Tipografia */
+  --font-family-headings: 'Merriweather', serif;
+  --font-family-body: 'Lato', sans-serif;
+
+  /* Outros */
+  --border-radius: 8px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --box-shadow-hover: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Reset e Globais */
+body {
+  font-family: var(--font-family-body);
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-headings);
+  color: var(--color-primary-dark);
+  margin-top: 0;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: var(--color-primary-dark);
+}
+
+button {
+  font-family: var(--font-family-body);
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  border: none;
+  font-size: 1rem;
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+input, select, textarea {
+  font-family: var(--font-family-body);
+  padding: 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(143, 188, 143, 0.3); /* Sombra do foco com cor primária */
+}
+
+
+/* Navbar */
+.navbar-john-nash {
+  background-color: var(--color-secondary); /* Tom de madeira */
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+}
+.navbar-john-nash .logo a {
+  font-family: var(--font-family-headings);
+  font-size: 1.8rem;
+  color: var(--color-white); /* Texto branco no fundo de madeira */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+.navbar-john-nash .nav-links span {
+  color: var(--color-surface);
+  margin-right: 1rem;
+}
+.navbar-john-nash .nav-links button,
+.navbar-john-nash .nav-links a {
+  background-color: transparent;
+  color: var(--color-white);
+  padding: 8px 15px;
+  border: 1px solid var(--color-white);
+  margin-left: 10px;
+}
+.navbar-john-nash .nav-links button:hover,
+.navbar-john-nash .nav-links a:hover {
+  background-color: var(--color-white);
+  color: var(--color-secondary);
+}
+
+
+/* Container Principal */
+.container {
+  padding: 2rem;
+  max-width: 1600px; /* Mais largo para Kanban */
+  margin: 0 auto;
+}
+
+/* Página de Autenticação */
+.auth-page-john-nash {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px); /* Considerando altura do navbar */
+  padding: 20px;
+}
+.auth-page-john-nash form {
+  background-color: var(--color-surface);
+  padding: 2rem 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  max-width: 450px;
+}
+.auth-page-john-nash form h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+.auth-page-john-nash form button[type="submit"] {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  width: 100%;
+  margin-top: 1rem;
+}
+.auth-page-john-nash form button[type="submit"]:hover {
+  background-color: var(--color-primary-dark);
+}
+.auth-page-john-nash form p {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+/* Dashboard */
+.dashboard-john-nash .dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap; /* Para telas menores */
+}
+.dashboard-john-nash .dashboard-header h2 {
+  margin-bottom: 0.5rem; /* Ajuste para telas menores */
+}
+.dashboard-john-nash .view-selector select {
+  padding: 10px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-white);
+  margin-right: 1rem; /* Espaço antes do botão de adicionar */
+  min-width: 200px;
+  margin-bottom: 0.5rem; /* Ajuste para telas menores */
+}
+.dashboard-john-nash .add-task-button {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-weight: bold;
+  margin-bottom: 0.5rem; /* Ajuste para telas menores */
+}
+.dashboard-john-nash .add-task-button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* ... outros estilos do dashboard ... */
+.dashboard-john-nash .header-title-section .header-subtitle-recurrence {
+  font-size: 0.9rem;
+  color: var(--color-primary); /* Ou outra cor de destaque */
+  font-weight: bold;
+  margin-top: -0.5rem; /* Ajuste de espaçamento */
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-john-nash .controls-section {
+  display: flex;
+  align-items: flex-end; /* Alinha os botões e selects pela base */
+  gap: 1.5rem; /* Aumenta o gap */
+}
+
+.dashboard-john-nash .view-selector { /* Já existe, mas pode precisar de ajuste para múltiplos */
+  display: flex;
+  flex-direction: column; 
+  min-width: 200px; /* Largura mínima para cada seletor */
+}
+
+/* Ajuste para o layout dos controles em telas menores se necessário */
+@media (max-width: 1024px) { /* Novo breakpoint ou ajuste do existente */
+  .dashboard-john-nash .controls-section {
+    flex-direction: column;
+    align-items: stretch; /* Faz com que os seletores ocupem a largura */
+    width: 100%;
+  }
+  .dashboard-john-nash .view-selector select,
+  .dashboard-john-nash .add-task-button {
+    width: 100%; /* Ocupar toda a largura disponível */
+  }
+   .dashboard-john-nash .add-task-button {
+    margin-top: 1rem; /* Espaço se estiver abaixo dos selects */
+  }
+}
+
+/* Task Form (formulário de tarefas) */
+.task-form-john-nash {
+  background-color: var(--color-surface);
+  padding: 1.5rem 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 2rem;
+}
+.task-form-john-nash h3 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.task-form-john-nash button[type="submit"] {
+  background-color: var(--color-success);
+  color: var(--color-white);
+}
+.task-form-john-nash button[type="button"] {
+  background-color: var(--color-text-secondary);
+  color: var(--color-white);
+  margin-left: 10px;
+}
+
+/* Kanban Board */
+.kanban-board-john-nash {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsivo */
+  gap: 1.5rem;
+}
+
+.task-column-john-nash {
+  background-color: rgba(255, 253, 208, 0.7); /* Creme mais transparente */
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  border: 1px dashed var(--color-secondary); /* Borda pontilhada cor de madeira */
+}
+.task-column-john-nash h3 {
+  color: var(--color-secondary); /* Cor de madeira para títulos de coluna */
+  border-bottom: 2px solid var(--color-secondary);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+/* Task Item */
+.task-item-john-nash {
+  background-color: var(--color-white);
+  padding: 1rem 1.2rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  box-shadow: var(--box-shadow);
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+  border-left: 5px solid var(--color-accent); /* Destaque lateral azul */
+}
+.task-item-john-nash:hover {
+  box-shadow: var(--box-shadow-hover);
+  transform: translateY(-2px);
+}
+.task-item-john-nash h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--color-text-primary);
+}
+.task-item-john-nash p {
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+  color: var(--color-text-secondary);
+}
+.task-item-john-nash .task-item-user {
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 0.5rem;
+}
+.task-item-john-nash .actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+.task-item-john-nash .actions button {
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  padding: 5px 10px;
+  font-size: 0.85rem;
+}
+.task-item-john-nash .actions button:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+.task-item-john-nash .actions button.delete {
+  border-color: var(--color-error);
+  color: var(--color-error);
+}
+.task-item-john-nash .actions button.delete:hover {
+  background-color: var(--color-error);
+  color: var(--color-white);
+}
+.task-item-john-nash select {
+    padding: 5px;
+    font-size: 0.9rem;
+    max-width: 150px; /* Para não ocupar muito espaço */
+}
+
+/* Mensagens de Erro e Loading */
+.error-message {
+  color: var(--color-error);
+  background-color: rgba(211, 47, 47, 0.1);
+  padding: 10px;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.john-nash-loading {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.5rem;
+  color: var(--color-primary-dark);
+  font-family: var(--font-family-headings);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .dashboard-john-nash .dashboard-header {
+    flex-direction: column;
+    align-items: stretch; /* Faz o select e botão ocuparem largura total */
+  }
+  .dashboard-john-nash .view-selector select,
+  .dashboard-john-nash .add-task-button {
+    width: 100%;
+    margin-right: 0; /* Remove margem direita em telas pequenas */
+    margin-bottom: 1rem;
+  }
+  .kanban-board-john-nash {
+     grid-template-columns: 1fr; /* Uma coluna em telas menores */
+  }
+  .navbar-john-nash {
+    padding: 1rem;
+    flex-direction: column;
+  }
+  .navbar-john-nash .logo {
+    margin-bottom: 0.5rem;
+  }
+  .navbar-john-nash .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+   .navbar-john-nash .nav-links button,
+   .navbar-john-nash .nav-links a {
+     margin-top: 0.5rem;
+     width: 100%;
+     text-align: center;
+   }
+}
