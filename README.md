@@ -1,7 +1,3 @@
-Claro! É uma excelente ideia criar um "checkpoint" do projeto para que você possa continuar com clareza em futuras interações ou com outros assistentes.
-
-Aqui está uma descrição detalhada do que construímos até agora para o seu assistente virtual doméstico "John Nash":
-
 **Visão Geral do Projeto "John Nash"**
 
 * **Objetivo:** Criar um assistente virtual doméstico, com foco em gerenciamento de tarefas, operando primariamente offline na rede local, com contas individuais para membros da família.
